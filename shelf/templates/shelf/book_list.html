@@ -1,0 +1,11 @@
+{% extends 'shelf/base.html' %}
+
+{%block content%}
+    {%for book in books%}
+                <div>
+                    <p>Published: {{book.published_date}}</p>
+                    <h2><a href='{% url 'book_detail' pk=book.pk%}'>{{book.title}}</a></h2>
+                    <p>{{book.text|linebreaksbr}}</p>
+                </div>
+    {% endfor %}
+{%endblock%}
