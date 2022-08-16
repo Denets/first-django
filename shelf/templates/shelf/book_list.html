@@ -2,10 +2,10 @@
 
 {%block content%}
     {%for book in books%}
-                <div>
-                    <p>Published: {{book.published_date}}</p>
+                <div class="book_list_item">
+                    <p>{{book.published_date}}</p>
                     <h2><a href='{% url 'book_detail' pk=book.pk%}'>{{book.title}}</a></h2>
-                    <p>{{book.text|linebreaksbr}}</p>
+                    <h4>{{book.text|linebreaksbr}}</h4>
                 </div>
     {% endfor %}
-{%endblock%}
+{%endblock%}    margin-top: 0;

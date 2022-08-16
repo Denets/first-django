@@ -1,16 +1,22 @@
+{% load static %}
 <html>
     <head>
         <title>Tyan</title>
+        <link rel="stylesheet" href="{%static 'css/shelf.css'%}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">Nya</a></h1>
-            {%if user.is_authenticated%}
-                <a href="{% url 'book_new' %}" class="top-menu">+</span></a>
-            {% endif %}
+        <div class="header">
+            <div class="header_container">
+                <div class="header_logo">
+                    <a href="/" class="header_logo_text">Nya</a>
+                </div>
+                {%if user.is_authenticated%}
+                    <a href="{% url 'book_new' %}" class="header_add_book">+</a>
+                {% endif %}
+            </div>
         </div>
 
-        {%block content%}
+        {% block content %}
         {% endblock %}
     </body>
-</html>
+</html> 
